@@ -18,6 +18,8 @@ namespace ChainStringNumbersConsoleApp.IOC
                         var checkPositive = new CheckPositive();
                         checkTwoItems.SetSuccessor(checkNumbers);
                         checkNumbers.SetSuccessor(checkPositive);
+
+
                         service.AddSingleton<Validator>(_ => checkTwoItems);
                         service.AddSingleton<Splitter>();
                         service.AddSingleton<Handler>();
