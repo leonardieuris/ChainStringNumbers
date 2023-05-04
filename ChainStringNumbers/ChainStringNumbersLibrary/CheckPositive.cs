@@ -1,6 +1,6 @@
 ﻿namespace ChainStringNumbersLibrary;
 
-internal class CheckPositive : Validator
+public class CheckPositive : Validator
 {
     public override (bool, string) IsValid(List<string> myList)
     {

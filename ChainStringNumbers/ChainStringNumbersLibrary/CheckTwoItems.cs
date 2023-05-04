@@ -1,6 +1,6 @@
 ﻿namespace ChainStringNumbersLibrary;
 
-internal class CheckTwoItems : Validator
+public class CheckTwoItems : Validator
 {
     public override (bool, string) IsValid(List<string> myList)
     {

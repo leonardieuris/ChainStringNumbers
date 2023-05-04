@@ -1,17 +1,16 @@
 ﻿namespace ChainStringNumbersLibrary
 {
-    internal class Splitter 
+    public class Splitter 
     {
-        private readonly string _myString;
+        
 
-        public Splitter(string MyString)
+        public Splitter()
         {
-            _myString = MyString;
         }
 
-        public List<string> GetList()
+        public List<string> GetList(string myString)
         {
-            return _myString.Split(",").ToList();
+            return myString.Split(",").ToList();
         }
     }
 }

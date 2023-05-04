@@ -1,6 +1,6 @@
 ﻿namespace ChainStringNumbersLibrary
 {
-    internal abstract class Validator : IValidator
+    public abstract class Validator : IValidator
     {
         protected IValidator _successor;
 

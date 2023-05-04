@@ -1,6 +1,6 @@
 ﻿namespace ChainStringNumbersLibrary
 {
-    internal class CheckNumber : Validator
+    public class CheckNumber : Validator
     {
         public override (bool, string) IsValid(List<string> myList)
         {

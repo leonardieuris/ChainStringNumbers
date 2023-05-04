@@ -2,37 +2,26 @@
 {
     public class Handler
     {
-        public Handler()
+        private readonly Validator _validator;
+        private readonly Splitter _splitter;
+
+        public Handler(Validator validator,Splitter splitter)
         {
-            
+            _validator = validator;
+            _splitter = splitter;
         }
 
 
         public int GetResult(string input)
         {
-            var myList = ManageString(input);
-            var validation = Validator(myList);
+            var myList = _splitter.GetList(input);
+            var validation = _validator.IsValid(myList);
             if (!validation.Item1)
                 throw new Exception(validation.Item2);
             return Sum(myList);
 
         }
 
-        private (bool,string) Validator(List<string> myList)
-        {
-            var checkTwoItems = new CheckTwoItems();
-            var checkNumbers = new CheckNumber();
-            var checkPositive = new CheckPositive();
-            checkTwoItems.SetSuccessor(checkNumbers);
-            checkNumbers.SetSuccessor(checkPositive);
-            return checkTwoItems.IsValid(myList);
-        }
-
-        private List<string> ManageString(string input)
-        {
-            var splitter = new Splitter(input);
-            return splitter.GetList();
-        }
 
         private int Sum(List<string> myList)
         {
